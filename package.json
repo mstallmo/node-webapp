@@ -1,0 +1,23 @@
+{
+  "name": "node-webapp",
+  "version": "1.0.0",
+  "description": "Simple sandbox web application for learning about and testing Node.js and Express\r web applications",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mstallmo/node-webapp.git"
+  },
+  "author": "Mason Stallmo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mstallmo/node-webapp/issues"
+  },
+  "homepage": "https://github.com/mstallmo/node-webapp#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
