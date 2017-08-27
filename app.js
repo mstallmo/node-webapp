@@ -1,17 +1,17 @@
 const express = require('express');
 const app = express();
+const bookRouter = require('./src/routes/bookRoutes')
 
 let port = process.env.PORT || 8080;
 
 app.use(express.static('public'));
-app.use(express.static('src/views'));
+app.set('views', './src/views');
+app.set('view engine', 'ejs');
+
+app.use('/books', bookRouter);
 
 app.get('/', function(req, res) {
-    res.send('Hello World');
-});
-
-app.get('/books', function (req, res) {
-    res.send('Hello Books');
+    res.render('index', {title: 'Hello from render', nav: [{Link: '/books', Text: 'Books'},{Link: '/authors', Text: 'Authors'}]});
 });
 
 app.listen(port, function(err) {
