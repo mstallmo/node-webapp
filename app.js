@@ -1,6 +1,13 @@
 const express = require('express');
 const app = express();
-const bookRouter = require('./src/routes/bookRoutes')
+
+const nav = [{
+    Link: '/books',
+    Text: 'Books'
+}, {
+    Link: '/authors', Text: 'Authors'
+}];
+const bookRouter = require('./src/routes/bookRoutes')(nav);
 
 let port = process.env.PORT || 8080;
 
@@ -11,7 +18,7 @@ app.set('view engine', 'ejs');
 app.use('/books', bookRouter);
 
 app.get('/', function(req, res) {
-    res.render('index', {title: 'Hello from render', nav: [{Link: '/books', Text: 'Books'},{Link: '/authors', Text: 'Authors'}]});
+    res.render('index', {title: 'Hello from render', nav: nav});
 });
 
 app.listen(port, function(err) {
