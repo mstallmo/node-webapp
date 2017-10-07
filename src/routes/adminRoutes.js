@@ -6,11 +6,13 @@ const books = [
     {
         title: 'Fight Club',
         author: ' Chuck Palahniuk',
+        bookId: 5759,
         read: true
     },
     {
         title: 'Catch 22',
         author: 'Joseph Heller',
+        bookId: 168668,
         read: true
     },
     {
